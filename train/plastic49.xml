@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>plastic49.jpg</filename>
+	<path>/Users/jbernas/models/research/object_detection/images/train/plastic49.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>384</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>plastic</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>21</xmin>
+			<ymin>94</ymin>
+			<xmax>475</xmax>
+			<ymax>286</ymax>
+		</bndbox>
+	</object>
+</annotation>

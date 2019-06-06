@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>trash20.jpg</filename>
+	<path>/Users/jbernas/models/research/object_detection/images/train/trash20.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>384</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>trash</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>85</xmin>
+			<ymin>48</ymin>
+			<xmax>512</xmax>
+			<ymax>384</ymax>
+		</bndbox>
+	</object>
+</annotation>
