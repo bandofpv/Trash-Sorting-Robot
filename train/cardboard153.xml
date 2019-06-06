@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>cardboard153.jpg</filename>
+	<path>/Users/jbernas/models/research/object_detection/images/train/cardboard153.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>384</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cardboard</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>64</xmin>
+			<ymin>36</ymin>
+			<xmax>411</xmax>
+			<ymax>348</ymax>
+		</bndbox>
+	</object>
+</annotation>
