@@ -1,7 +1,7 @@
 <annotation>
 	<folder>train</folder>
-	<filename>cardboard1.jpg</filename>
-	<path>/Users/jbernas/Trash_Sorting_Robot/train/cardboard1.jpg</path>
+	<filename>metal223.jpg</filename>
+	<path>/Users/jbernas/Trash_Sorting_Robot/train/metal223.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,13 +12,13 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>cardboard</name>
+		<name>metal</name>
 		<pose>Unspecified</pose>
 		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1</xmin>
-			<ymin>1</ymin>
+			<xmin>176</xmin>
+			<ymin>24</ymin>
 			<xmax>512</xmax>
 			<ymax>384</ymax>
 		</bndbox>
