@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>paper126.jpg</filename>
+	<path>/Users/jbernas/Trash_Sorting_Robot/train/paper126.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>384</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>paper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>63</xmin>
+			<ymin>59</ymin>
+			<xmax>379</xmax>
+			<ymax>359</ymax>
+		</bndbox>
+	</object>
+</annotation>
