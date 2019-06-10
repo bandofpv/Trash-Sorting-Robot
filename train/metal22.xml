@@ -1,7 +1,7 @@
 <annotation>
 	<folder>train</folder>
 	<filename>metal22.jpg</filename>
-	<path>/Users/jbernas/models/research/object_detection/images/train/metal22.jpg</path>
+	<path>/Users/jbernas/Trash_Sorting_Robot/train/metal22.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>171</xmin>
-			<ymin>67</ymin>
-			<xmax>430</xmax>
-			<ymax>329</ymax>
+			<xmin>179</xmin>
+			<ymin>75</ymin>
+			<xmax>419</xmax>
+			<ymax>320</ymax>
 		</bndbox>
 	</object>
 </annotation>

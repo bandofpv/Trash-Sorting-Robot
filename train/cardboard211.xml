@@ -14,13 +14,13 @@
 	<object>
 		<name>cardboard</name>
 		<pose>Unspecified</pose>
-		<truncated>1</truncated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1</xmin>
-			<ymin>33</ymin>
-			<xmax>503</xmax>
-			<ymax>370</ymax>
+			<xmin>3</xmin>
+			<ymin>42</ymin>
+			<xmax>490</xmax>
+			<ymax>356</ymax>
 		</bndbox>
 	</object>
 </annotation>

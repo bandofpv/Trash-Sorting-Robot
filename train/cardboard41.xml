@@ -1,7 +1,7 @@
 <annotation>
 	<folder>train</folder>
 	<filename>cardboard41.jpg</filename>
-	<path>/Users/jbernas/models/research/object_detection/images/train/cardboard41.jpg</path>
+	<path>/Users/jbernas/Trash_Sorting_Robot/train/cardboard41.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -14,13 +14,13 @@
 	<object>
 		<name>cardboard</name>
 		<pose>Unspecified</pose>
-		<truncated>1</truncated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>45</xmin>
-			<ymin>20</ymin>
-			<xmax>512</xmax>
-			<ymax>262</ymax>
+			<xmin>53</xmin>
+			<ymin>26</ymin>
+			<xmax>509</xmax>
+			<ymax>254</ymax>
 		</bndbox>
 	</object>
 </annotation>

@@ -14,13 +14,13 @@
 	<object>
 		<name>glass</name>
 		<pose>Unspecified</pose>
-		<truncated>1</truncated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>68</xmin>
-			<ymin>1</ymin>
-			<xmax>396</xmax>
-			<ymax>320</ymax>
+			<xmin>82</xmin>
+			<ymin>5</ymin>
+			<xmax>383</xmax>
+			<ymax>309</ymax>
 		</bndbox>
 	</object>
 </annotation>

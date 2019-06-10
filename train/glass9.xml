@@ -1,7 +1,7 @@
 <annotation>
 	<folder>train</folder>
 	<filename>glass9.jpg</filename>
-	<path>/Users/jbernas/models/research/object_detection/images/train/glass9.jpg</path>
+	<path>/Users/jbernas/Trash_Sorting_Robot/train/glass9.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>85</xmin>
-			<ymin>65</ymin>
-			<xmax>392</xmax>
-			<ymax>333</ymax>
+			<xmin>93</xmin>
+			<ymin>74</ymin>
+			<xmax>379</xmax>
+			<ymax>327</ymax>
 		</bndbox>
 	</object>
 </annotation>
