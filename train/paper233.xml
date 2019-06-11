@@ -14,13 +14,13 @@
 	<object>
 		<name>paper</name>
 		<pose>Unspecified</pose>
-		<truncated>1</truncated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1</xmin>
-			<ymin>90</ymin>
-			<xmax>479</xmax>
-			<ymax>384</ymax>
+			<xmin>2</xmin>
+			<ymin>100</ymin>
+			<xmax>465</xmax>
+			<ymax>374</ymax>
 		</bndbox>
 	</object>
 </annotation>

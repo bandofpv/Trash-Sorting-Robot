@@ -1,7 +1,7 @@
 <annotation>
 	<folder>train</folder>
 	<filename>paper51.jpg</filename>
-	<path>/Users/jbernas/models/research/object_detection/images/train/paper51.jpg</path>
+	<path>/Users/jbernas/Trash_Sorting_Robot/train/paper51.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -18,7 +18,7 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>1</xmin>
-			<ymin>167</ymin>
+			<ymin>178</ymin>
 			<xmax>512</xmax>
 			<ymax>384</ymax>
 		</bndbox>
