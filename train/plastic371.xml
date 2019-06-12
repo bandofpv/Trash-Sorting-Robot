@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>plastic371.jpg</filename>
+	<path>/Users/jbernas/Trash_Sorting_Robot/train/plastic371.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>384</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>plastic</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>123</xmin>
+			<ymin>1</ymin>
+			<xmax>453</xmax>
+			<ymax>384</ymax>
+		</bndbox>
+	</object>
+</annotation>
