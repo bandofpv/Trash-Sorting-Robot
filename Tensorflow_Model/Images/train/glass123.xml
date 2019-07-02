@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>glass123.jpg</filename>
+	<path>/Users/jbernas/Trash_Sorting_Robot/train/glass123.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>384</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>glass</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>53</xmin>
+			<ymin>1</ymin>
+			<xmax>435</xmax>
+			<ymax>253</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>metal198.jpg</filename>
+	<path>/Users/jbernas/Trash_Sorting_Robot/train/metal198.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>384</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>metal</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>81</xmin>
+			<ymin>42</ymin>
+			<xmax>328</xmax>
+			<ymax>344</ymax>
+		</bndbox>
+	</object>
+</annotation>
