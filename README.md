@@ -10,7 +10,7 @@
 
 ## Repository Contents:
 
-### [Tensorflow](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Tensorflow):
+### [Tensorflow - files used for training model](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Tensorflow):
 * [CSV](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Tensorflow/CSV) - .csv files of both the train and test image set
 * [Images](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Tensorflow/Images) - .jpg images of recycling materials and .xml files of the annotated images
 * [SaveModel](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Tensorflow/SaveModel) - frozen graph of trained model
