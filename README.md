@@ -8,7 +8,7 @@
 * [How to Build and Install Tensorflow From Source on Windows 10](https://medium.com/@amsokol.com/how-to-build-and-install-tensorflow-gpu-cpu-for-windows-from-source-code-using-bazel-d047d9342b44)
 * [Object Detection with Google Coral USB Accelerator](https://www.pyimagesearch.com/2019/05/13/object-detection-and-image-classification-with-google-coral-usb-accelerator/)
 
-## Organization:
+## Repository Contents:
 
 ### [Tensorflow](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Tensorflow):
 * [CSV](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Tensorflow/CSV) - .csv files of both the train and test image set
