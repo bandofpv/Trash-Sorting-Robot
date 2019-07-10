@@ -14,27 +14,35 @@ import serial
 import math
 import warnings
 
+# filter out RuntimeWarning from a divide by zero error in angle calculation 
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
+# stop is used to reset the counting variables
 stop = 0
 
+# count variables used to track the number of frames detected of each object
 cardboardCount = 0
 glassCount = 0
 metalCount = 0
 paperCount = 0
 plasticCount = 0
 
+# variables used to send to Arduino about location of object
 inputDistance = ' 0'
 inputAngle = ' 90'
 
+# create variables to connect the RPI to Arduino via USB
 port = "/dev/ttyACM0"
 rate = 9600
 
+# start the serial communication
 s1 = serial.Serial(port,rate)
 s1.flushInput()
 
+# done is used to tell program that the arm is done moving
 done = 1
 
+# list of strings that the Arduino will send to RPI
 comp_list=["Flash complete\r\n","Connected to Arduino\r\n"]
 
 # construct the argument parser and parse the arguments
@@ -88,7 +96,8 @@ while True:
 	results = model.DetectWithImage(frame, threshold=args["confidence"],
 		keep_aspect_ratio=True, relative_coord=False)
 	end = time.time()
-	
+
+        # make three circles indicating the arm's range of motion
 	cv2.circle(orig, (275, 445), 390, (0, 0, 255), 3, 8, 0)
 	cv2.circle(orig, (275, 445), 340, (0, 0, 255), 3, 8, 0)
 	cv2.circle(orig, (275, 445), 290, (0, 0, 255), 3, 8, 0)
@@ -100,28 +109,37 @@ while True:
 		(startX, startY, endX, endY) = box
 		label = labels[r.label_id]
 
+                # TODO: DELETE THIS!!!!
 		if label != "cardboard!":
+                        # center coordinates of object detected
 			centerX = ((endX - startX) // 2) + startX
 			centerY = ((endY - startY) // 2) + startY
-			
+
+                        # calculate the distance from arm to object
 			calcDistance = int(math.sqrt(((centerX - 250)**2)+((centerY - 500)**2)))
-			
+
+                        # if object is close to the closest circle
 			if calcDistance <= 314:
 				inputDistance = ' 1'
-				
+
+                        # if object is close to the middle circle
 			if calcDistance >= 315 and calcDistance <= 364:
 				inputDistance = ' 2'
-				
+
+                        # if obejct is close to the furthest circle
 			if calcDistance >= 365:
 				inputDistance = ' 3'
 
-			# draw the bounding box and label on the image
+                        # TODO: Move this UP!!!
+                        # draw the bounding box and label on the image
 			centerX = ((endX - startX) // 2) + startX
 			centerY = ((endY - startY) // 2) + startY
-			
+
+                        # calculate angle of object to arm
 			angle = int(math.atan((centerY - 500)/(centerX - 275))*180/math.pi)
-			angle = angle 
-				
+
+                        # calculated angle gives angles between (-90,90) NOT (0,180)
+                        # if statements used to convert the (-90,90) angles to (0,180)
 			if angle > 0:
 				angle = abs(angle - 180)
 				
@@ -130,19 +148,27 @@ while True:
 				
 			if angle == 90: 
 				angle = 0
-				
+
+                        # convert (0,180) angle to a string to send to Arduino
 			inputAngle = ' ' + str(angle)
-			
+
+                        # create circle of center of object
 			cv2.circle(orig, (centerX, centerY), 5, (0, 0, 255), -1)
-			cv2.circle(orig, (275, 370), 5, (0, 0, 255), -1)
-			cv2.line(orig, (centerX, centerY), (250, 370), (0, 0, 255), 1)
+
+                        # create circle of where the arm is 
+                        cv2.circle(orig, (275, 370), 5, (0, 0, 255), -1)
+
+                        # create line connecting the arm and object location with the angle calculated too
+                        cv2.line(orig, (centerX, centerY), (250, 370), (0, 0, 255), 1)
 			cv2.putText(orig, str(angle), (260, 360), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
-			
+
+                        # create name and bounding box around object
 			cv2.rectangle(orig, (startX, startY), (endX, endY), (0, 255, 0))
 			y = startY - 15 if startY - 15 > 15 else startY + 15
 			text = "{}: {:.2f}%".format(label, r.score * 100)
 			cv2.putText(orig, text, (startX, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)      
-			
+
+                        # 
 			if done == 1:		
 				if label == "cardboard":
 					print(label);
