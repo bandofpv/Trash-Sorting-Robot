@@ -7,8 +7,8 @@
 * [How to Train Tensorflow Lite Object Detection Model in Cloud TPUs](https://medium.com/tensorflow/training-and-serving-a-realtime-mobile-object-detector-in-30-minutes-with-cloud-tpus-b78971cf1193)
 * [How to Build and Install Tensorflow From Source on Windows 10](https://medium.com/@amsokol.com/how-to-build-and-install-tensorflow-gpu-cpu-for-windows-from-source-code-using-bazel-d047d9342b44)
 * [Object Detection with Google Coral USB Accelerator](https://www.pyimagesearch.com/2019/05/13/object-detection-and-image-classification-with-google-coral-usb-accelerator/)
-* [3D Printed Robtic Arm](https://howtomechatronics.com/tutorials/arduino/diy-arduino-robot-arm-with-smartphone-control/)
 * [USB-to-Serial Communication with Raspberry Pi and Arduino](https://www.sunfounder.com/blog/rpi-ard/)
+* [3D Printed Robtic Arm](https://howtomechatronics.com/tutorials/arduino/diy-arduino-robot-arm-with-smartphone-control/)
 
 ## Repository Contents:
 
