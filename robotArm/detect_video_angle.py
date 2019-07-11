@@ -85,7 +85,9 @@ while True:
 		largeRadius = 450
 		
 		cv2.circle(orig, (275, 445), 390, (0, 0, 255), 3, 8, 0)
+		cv2.circle(orig, (275, 445), 365, (0, 0, 255), 3, 8, 0)
 		cv2.circle(orig, (275, 445), 340, (0, 0, 255), 3, 8, 0)
+		cv2.circle(orig, (275, 445), 315, (0, 0, 255), 3, 8, 0)
 		cv2.circle(orig, (275, 445), 290, (0, 0, 255), 3, 8, 0)
 		
 		if label != "cardboard!":

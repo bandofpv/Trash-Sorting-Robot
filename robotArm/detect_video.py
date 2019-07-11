@@ -97,7 +97,7 @@ while True:
 		keep_aspect_ratio=True, relative_coord=False)
 	end = time.time()
 
-        # make three circles indicating the arm's range of motion
+    # make three circles indicating the arm's range of motion
 	cv2.circle(orig, (275, 445), 390, (0, 0, 255), 3, 8, 0)
 	cv2.circle(orig, (275, 445), 340, (0, 0, 255), 3, 8, 0)
 	cv2.circle(orig, (275, 445), 290, (0, 0, 255), 3, 8, 0)
