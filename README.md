@@ -12,6 +12,10 @@
 
 ## Repository Contents:
 
+### [Arduino - files used for Arduino to control robotic arm](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Arduino):
+* [basicMovement](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Arduino/basicMovement) - .ino file to perform basic movement with robotic arm
+* [
+
 ### [Tensorflow - files used for training model](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Tensorflow):
 * [CSV](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Tensorflow/CSV) - .csv files of both the train and test image set
 * [Images](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Tensorflow/Images) - .jpg images of recycling materials and .xml files of the annotated images
