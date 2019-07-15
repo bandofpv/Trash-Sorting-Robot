@@ -1,4 +1,11 @@
-// add Servo library 
+/*
+   This code is used to control the robotic arm based on the inputs from the
+   Raspberry Pi. The Raspberry Pi will detect the recycle and will tell the Arduino
+   to move the robotic arm in the location the object is detected at. Based on
+   the material, the robotic arm will place the object in the correct loaction.
+*/
+
+// add Servo library
 #include <Servo.h>
 
 // create variables to store data from RPI
@@ -24,8 +31,8 @@ Servo hand;
 Servo base;
 
 // create flash function (will flash Arduino LED by the number you input)
-void flash(int n){
-  for (int i = 0; i < n; i++){
+void flash(int n) {
+  for (int i = 0; i < n; i++) {
     digitalWrite(13, HIGH);
     delay(500);
     digitalWrite(13, LOW);
@@ -49,7 +56,7 @@ void setup() {
   hand.attach(5);
   base.attach(3);
 
-  // move arm to home position to face camera down 
+  // move arm to home position to face camera down
   homeState();
 }
 
@@ -58,14 +65,14 @@ void loop() {
   Serial.println("Connected to Arduino");
 
   // if the RPI sends a signal to Arduino
-  if(Serial.available()){
+  if (Serial.available()) {
     // change values of variables to what the RPI sends
     numBlink = Serial.parseInt();
     material = Serial.parseInt();
     distance = Serial.parseInt();
     angle = Serial.parseInt();
-    
-    // flash LED and move the arm to pick and drop the object based on its material 
+
+    // flash LED and move the arm to pick and drop the object based on its material
     flash(numBlink);
     pickUp();
     dropOff();
@@ -81,22 +88,22 @@ void loop() {
 }
 
 /*
- * sweep function to make servos move slowly!
- * 
- * input the servo object, the current servo angle, the angle you 
- * want the servo to move to, and the speed at which you want to turn 
- * the servo. Bigger number ==> slower speed. Smaller number ==> faster speed.
- */
-void sweep(Servo servo,int oldPos, int newPos, int servoSpeed){
-  if (oldPos <= newPos){
-    for (oldPos; oldPos <= newPos; oldPos += 1){
+   sweep function to make servos move slowly!
+
+   input the servo object, the current servo angle, the angle you
+   want the servo to move to, and the speed at which you want to turn
+   the servo. Bigger number ==> slower speed. Smaller number ==> faster speed.
+*/
+void sweep(Servo servo, int oldPos, int newPos, int servoSpeed) {
+  if (oldPos <= newPos) {
+    for (oldPos; oldPos <= newPos; oldPos += 1) {
       servo.write(oldPos);
       delay(servoSpeed);
-   }
+    }
   }
 
-  else if (oldPos >= newPos){
-    for (oldPos; oldPos >= newPos; oldPos -= 1){
+  else if (oldPos >= newPos) {
+    for (oldPos; oldPos >= newPos; oldPos -= 1) {
       servo.write(oldPos);
       delay(servoSpeed);
     }
@@ -104,12 +111,13 @@ void sweep(Servo servo,int oldPos, int newPos, int servoSpeed){
 }
 
 // pickUp function that will move robotic arm to specified distance and angle sent from RPI
-void pickUp(){
-  if (distance == 1){
+void pickUp() {  
+  // if the object detected is closest to the small/closest circle distance preset
+  if (distance == 1) {
     sweep(base, basePos, angle, 30);
     basePos = angle;
     sweep(hand, handPos, 160, 30);
-    handPos = 160;  
+    handPos = 160;
     sweep(wrist2, wrist2Pos, 35, 30);
     wrist2Pos = 35;
     sweep(elbow, elbowPos, 180, 30);
@@ -120,113 +128,122 @@ void pickUp(){
     handPos = 45;
     distance = 0;
   }
- else if (distance == 2){
-   sweep(base, basePos, angle, 30);
-   basePos = angle;
-   sweep(hand, handPos, 160, 30);
-   handPos = 160;  
-   sweep(wrist2, wrist2Pos, 32, 30);
-   wrist2Pos = 32;
-   sweep(elbow, elbowPos, 165, 30);
-   elbowPos = 165;
-   sweep(shoulder, shoulderPos, 55, 30);
-   shoulderPos = 55;
-   sweep(hand, handPos, 45, 30);
-   handPos = 45;
-   distance = 0;
- }
- else if (distance == 3){
-  sweep(base, basePos, angle, 30);
-  basePos = angle;
-  sweep(hand, handPos, 160, 30);
-  handPos = 160;
-  sweep(wrist2, wrist2Pos, 32, 30);
-  wrist2Pos = 32;
-  sweep(elbow, elbowPos, 150, 30);
-  elbowPos = 150;
-  sweep(shoulder, shoulderPos, 45, 30);
-  shoulderPos = 45;
-  sweep(hand, handPos, 45, 30);
-  handPos = 45;
-  distance = 0;
- }
+
+  // if the object detected is closest to the medium circle distance preset
+  else if (distance == 2) {
+    sweep(base, basePos, angle, 30);
+    basePos = angle;
+    sweep(hand, handPos, 160, 30);
+    handPos = 160;
+    sweep(wrist2, wrist2Pos, 32, 30);
+    wrist2Pos = 32;
+    sweep(elbow, elbowPos, 165, 30);
+    elbowPos = 165;
+    sweep(shoulder, shoulderPos, 55, 30);
+    shoulderPos = 55;
+    sweep(hand, handPos, 45, 30);
+    handPos = 45;
+    distance = 0;
+  }
+
+  // if the object detected is closest to the big/farthest circle distance preset
+  else if (distance == 3) {
+    sweep(base, basePos, angle, 30);
+    basePos = angle;
+    sweep(hand, handPos, 160, 30);
+    handPos = 160;
+    sweep(wrist2, wrist2Pos, 32, 30);
+    wrist2Pos = 32;
+    sweep(elbow, elbowPos, 150, 30);
+    elbowPos = 150;
+    sweep(shoulder, shoulderPos, 45, 30);
+    shoulderPos = 45;
+    sweep(hand, handPos, 45, 30);
+    handPos = 45;
+    distance = 0;
+  }
 }
 
 // dropOff function that will drop off the object to a location based off its material
-void dropOff(){
-  if (material == 1){
-   sweep(shoulder, shoulderPos, 90, 30);
-   shoulderPos = 90;
-   sweep(elbow, elbowPos, 0, 30);
-   elbowPos = 0;
-   sweep(wrist2, wrist2Pos, 90, 30);
-   wrist2Pos = 90;
-   sweep(base, basePos, 0, 30);
-   basePos = 0;
-   sweep(hand, handPos, 160, 30);
-   handPos = 160;
-   material = 0;
+void dropOff() {
+  // if the material detected was cardboard
+  if (material == 1) {
+    sweep(shoulder, shoulderPos, 90, 30);
+    shoulderPos = 90;
+    sweep(elbow, elbowPos, 0, 30);
+    elbowPos = 0;
+    sweep(wrist2, wrist2Pos, 90, 30);
+    wrist2Pos = 90;
+    sweep(base, basePos, 0, 30);
+    basePos = 0;
+    sweep(hand, handPos, 160, 30);
+    handPos = 160;
+    material = 0;
   }
 
-  else if (material == 2){
-   sweep(shoulder, shoulderPos, 90, 30);
-   shoulderPos = 90;
-   sweep(elbow, elbowPos, 0, 30);
-   elbowPos = 0;
-   sweep(wrist2, wrist2Pos, 90, 30);
-   wrist2Pos = 90;
-   sweep(base, basePos, 45, 30);
-   basePos = 45;
-   sweep(hand, handPos, 160, 30);
-   handPos = 160;
-   material = 0;
+  // if the material detected was glass
+  else if (material == 2) {
+    sweep(shoulder, shoulderPos, 90, 30);
+    shoulderPos = 90;
+    sweep(elbow, elbowPos, 0, 30);
+    elbowPos = 0;
+    sweep(wrist2, wrist2Pos, 90, 30);
+    wrist2Pos = 90;
+    sweep(base, basePos, 45, 30);
+    basePos = 45;
+    sweep(hand, handPos, 160, 30);
+    handPos = 160;
+    material = 0;
   }
 
-  else if (material == 3){
-   sweep(shoulder, shoulderPos, 90, 30);
-   shoulderPos = 90;
-   sweep(elbow, elbowPos, 0, 30);
-   elbowPos = 0;
-   sweep(wrist2, wrist2Pos, 90, 30);
-   wrist2Pos = 90;
-   sweep(base, basePos, 90, 30);
-   basePos = 90;
-   sweep(hand, handPos, 160, 30);
-   handPos = 160;
-   material = 0;
+  // if the material detected was metal
+  else if (material == 3) {
+    sweep(shoulder, shoulderPos, 90, 30);
+    shoulderPos = 90;
+    sweep(elbow, elbowPos, 0, 30);
+    elbowPos = 0;
+    sweep(wrist2, wrist2Pos, 90, 30);
+    wrist2Pos = 90;
+    sweep(base, basePos, 90, 30);
+    basePos = 90;
+    sweep(hand, handPos, 160, 30);
+    handPos = 160;
+    material = 0;
   }
 
-  else if (material == 4){
-   sweep(shoulder, shoulderPos, 90, 30);
-   shoulderPos = 90;
-   sweep(elbow, elbowPos, 0, 30);
-   elbowPos = 0;
-   sweep(wrist2, wrist2Pos, 90, 30);
-   wrist2Pos = 90;
-   sweep(base, basePos, 135, 30);
-   basePos = 135;
-   sweep(hand, handPos, 160, 30);
-   handPos = 160;
-   material = 0;
+  // if the material detected was paper
+  else if (material == 4) {
+    sweep(shoulder, shoulderPos, 90, 30);
+    shoulderPos = 90;
+    sweep(elbow, elbowPos, 0, 30);
+    elbowPos = 0;
+    sweep(wrist2, wrist2Pos, 90, 30);
+    wrist2Pos = 90;
+    sweep(base, basePos, 135, 30);
+    basePos = 135;
+    sweep(hand, handPos, 160, 30);
+    handPos = 160;
+    material = 0;
   }
 
-  else if (material == 5){
-   sweep(shoulder, shoulderPos, 90, 30);
-   shoulderPos = 90;
-   sweep(elbow, elbowPos, 0, 30);
-   elbowPos = 0;
-   sweep(wrist2, wrist2Pos, 90, 30);
-   wrist2Pos = 90;
-   sweep(base, basePos, 180, 30);
-   basePos = 180;
-   sweep(hand, handPos, 160, 30);
-   handPos = 160;
-   material = 0;
+  // if the material detected was plastic
+  else if (material == 5) {
+    sweep(shoulder, shoulderPos, 90, 30);
+    shoulderPos = 90;
+    sweep(elbow, elbowPos, 0, 30);
+    elbowPos = 0;
+    sweep(wrist2, wrist2Pos, 90, 30);
+    wrist2Pos = 90;
+    sweep(base, basePos, 180, 30);
+    basePos = 180;
+    sweep(hand, handPos, 160, 30);
+    handPos = 160;
+    material = 0;
   }
 }
 
 // homeState function that will hold the camera facing down to perform obejct detection
-void homeState(){
+void homeState() {
   sweep(base, basePos, 90, 30);
   basePos = 90;
   sweep(wrist2, wrist2Pos, 60, 30);

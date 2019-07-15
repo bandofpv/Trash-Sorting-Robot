@@ -3,7 +3,7 @@
 # object in the proper location based on its material.
 
 # USAGE
-# python detect_video.py --model trash_ssd_v2/detect_edgetpu.tflite --labels trash_ssd_v2/labels.txt
+# python detect_video.py --ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03/detect_edgetpu.tflite --labels ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03/labels.txt
 
 # import the necessary packages
 from edgetpu.detection.engine import DetectionEngine
