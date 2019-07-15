@@ -16,7 +16,7 @@
 * [basicMovement](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Arduino/basicMovement) - .ino file to perform basic movement with robotic arm
 * [roboticArm](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Arduino/roboticArm) - .ino file to control robotic arm to pick up and drop off a piece of recycling detected from the Raspberry Pi
 
-### [RPI](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/RPI) - files used for Raspberry Pi to perfrom object detection:
+### [RPI](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/RPI) - files used for Raspberry Pi to perform object detection:
 * [recycle_ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/RPI/recycle_ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03) - .tflite and .txt files of the trained recycle model and lables to perform object detection
 * [recycle_detection.py](https://github.com/bandofpv/Trash_Sorting_Robot/blob/master/RPI/recycle_detection.py) - python code used to perform object detection and communicate with Arduino
 
