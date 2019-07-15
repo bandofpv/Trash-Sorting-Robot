@@ -1,5 +1,9 @@
+# This code will detect the location of different recycle materials and communicate
+# with the Arduino (used to control the robotic arm) to pick up and drop the 
+# object in the proper location based on its material.
+
 # USAGE
-# python detect_video.py --model mobilenet_ssd_v2/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite --labels mobilenet_ssd_v2/coco_labels.txt
+# python detect_video.py --model trash_ssd_v2/detect_edgetpu.tflite --labels trash_ssd_v2/labels.txt
 
 # import the necessary packages
 from edgetpu.detection.engine import DetectionEngine
@@ -120,7 +124,7 @@ while True:
 		if calcDistance <= 314:
 			inputDistance = ' 1'
 
-					# if object is close to the middle circle
+		# if object is close to the middle circle
 		if calcDistance >= 315 and calcDistance <= 364:
 			inputDistance = ' 2'
 
