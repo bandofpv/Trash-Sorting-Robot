@@ -103,7 +103,9 @@ while True:
 
     # make three circles indicating the arm's range of motion
 	cv2.circle(orig, (275, 445), 390, (0, 0, 255), 3, 8, 0)
-	cv2.circle(orig, (275, 445), 340, (0, 0, 255), 3, 8, 0)
+	cv2.circle(orig, (275, 445), 365, (0, 0, 255), 3, 8, 0)
+	cv2.circle(orig, (275, 445), 340, (0, 0, 255), 3, 8, 0)	
+	cv2.circle(orig, (275, 445), 315, (0, 0, 255), 3, 8, 0)
 	cv2.circle(orig, (275, 445), 290, (0, 0, 255), 3, 8, 0)
 
 	# loop over the results
@@ -119,18 +121,26 @@ while True:
 
 		# calculate the distance from arm to object
 		calcDistance = int(math.sqrt(((centerX - 275)**2)+((centerY - 445)**2)))
-
-		# if object is close to the closest circle
-		if calcDistance <= 314:
+			
+		# if object is close to the smallest circle
+		if calcDistance <= 302:
 			inputDistance = ' 1'
 
-		# if object is close to the middle circle
-		if calcDistance >= 315 and calcDistance <= 364:
+		# if object is between smallest and middle circle
+		if calcDistance >= 303 and calcDistance <= 327:
 			inputDistance = ' 2'
-
-		# if obejct is close to the furthest circle
-		if calcDistance >= 365:
+			
+		# if object is close to middle circle
+		if calcDistance >= 328 and calcDistance <= 352:
 			inputDistance = ' 3'
+			
+		# if object is between middle and biggest circle
+		if calcDistance >= 353 and calcDistance <= 377:
+			inputDistance = ' 4'
+
+		# if obejct is close to the biggest circle
+		if calcDistance >= 378:
+			inputDistance = ' 5'
 
 		# calculate angle of object to arm
 		angle = int(math.atan((centerY - 445)/(centerX - 275))*180/math.pi)
@@ -139,7 +149,7 @@ while True:
 		# if statements used to convert the (-90,90) angles to (0,180)
 		if angle > 0:
 			angle = abs(angle - 180)
-			
+
 		if angle < 0:
 			angle = -angle
 			

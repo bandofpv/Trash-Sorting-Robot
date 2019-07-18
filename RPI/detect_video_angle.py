@@ -69,6 +69,14 @@ while True:
 		keep_aspect_ratio=True, relative_coord=False)
 	end = time.time()
 
+	cv2.circle(orig, (275, 445), 390, (0, 0, 255), 3, 8, 0)
+	cv2.circle(orig, (275, 445), 365, (0, 0, 255), 3, 8, 0)
+	cv2.circle(orig, (275, 445), 340, (0, 0, 255), 3, 8, 0)	
+	cv2.circle(orig, (275, 445), 315, (0, 0, 255), 3, 8, 0)
+	cv2.circle(orig, (275, 445), 290, (0, 0, 255), 3, 8, 0)
+	
+	cv2.circle(orig, (275, 0), 5, (0, 0, 255), 3, 8, 0)
+	
 	# loop over the results
 	for r in results:
 		# extract the bounding box and box and predicted class label
@@ -84,18 +92,12 @@ while True:
 		midRadius = 375
 		largeRadius = 450
 		
-		cv2.circle(orig, (275, 445), 390, (0, 0, 255), 3, 8, 0)
-		cv2.circle(orig, (275, 445), 365, (0, 0, 255), 3, 8, 0)
-		cv2.circle(orig, (275, 445), 340, (0, 0, 255), 3, 8, 0)
-		cv2.circle(orig, (275, 445), 315, (0, 0, 255), 3, 8, 0)
-		cv2.circle(orig, (275, 445), 290, (0, 0, 255), 3, 8, 0)
-		
 		if label != "cardboard!":
 			centerX = ((endX - startX) // 2) + startX
 			centerY = ((endY - startY) // 2) + startY
 
 			cv2.circle(orig, (250, 25), 10, (0, 0, 255), -1)
-			myDistance = int(math.sqrt(((centerX - 250)**2)+((centerY - 500)**2)))
+			myDistance = int(math.sqrt(((centerX - 275)**2)+((centerY - 445)**2)))
 			print(myDistance);
 			
 			# draw the bounding box and label on the image
