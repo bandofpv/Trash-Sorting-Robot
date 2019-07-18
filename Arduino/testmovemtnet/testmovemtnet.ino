@@ -35,12 +35,12 @@ void setup() {
 
   sweep(base, 90, 90, 30);
   sweep(hand, 90, 45, 30);
-//  sweep(wrist2, 90, 32, 30);
-//  sweep(elbow, 90, 150, 30);
-//  sweep(shoulder, 90, 45, 30);
-//  sweep(base, 90, 180, 50);
-//  sweep(base, 180, 0, 50);
-//  sweep(base, 0, 180, 50);
+  sweep(wrist2, 90, 37, 30);
+  sweep(elbow, 90, 175, 30);
+  sweep(shoulder, 90, 60, 30);
+  sweep(base, 90, 180, 50);
+  sweep(base, 180, 0, 50);
+  sweep(base, 0, 180, 50);
 
   //home
 //  sweep(base, 90, 90, 30);

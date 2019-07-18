@@ -129,8 +129,25 @@ void pickUp() {
     distance = 0;
   }
 
+  // if the object detected is between the smallest and medium circle distance preset
+  else if (distance == 2) {   
+    sweep(base, basePos, angle, 30);
+    basePos = angle;
+    sweep(hand, handPos, 160, 30);
+    handPos = 160;
+    sweep(wrist2, wrist2Pos, 37, 30);
+    wrist2Pos = 37;
+    sweep(elbow, elbowPos, 175, 30);
+    elbowPos = 175;
+    sweep(shoulder, shoulderPos, 60, 30);
+    shoulderPos = 60;
+    sweep(hand, handPos, 45, 30);
+    handPos = 45;
+    distance = 0;
+  }
+
   // if the object detected is closest to the medium circle distance preset
-  else if (distance == 2) {
+  else if (distance == 3) {
     sweep(base, basePos, angle, 30);
     basePos = angle;
     sweep(hand, handPos, 160, 30);
@@ -146,8 +163,25 @@ void pickUp() {
     distance = 0;
   }
 
+  // if the object detected is between the medium and big circle distance preset
+  else if (distance == 4) {
+    sweep(base, basePos, angle, 30);
+    basePos = angle;
+    sweep(hand, handPos, 160, 30);
+    handPos = 160;
+    sweep(wrist2, wrist2Pos, 32, 30);
+    wrist2Pos = 32;
+    sweep(elbow, elbowPos, 160, 30);
+    elbowPos = 160;
+    sweep(shoulder, shoulderPos, 50, 30);
+    shoulderPos = 50;
+    sweep(hand, handPos, 45, 30);
+    handPos = 45;
+    distance = 0;
+  }
+
   // if the object detected is closest to the big/farthest circle distance preset
-  else if (distance == 3) {
+  else if (distance == 5) {
     sweep(base, basePos, angle, 30);
     basePos = angle;
     sweep(hand, handPos, 160, 30);
