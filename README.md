@@ -1,4 +1,4 @@
-# Trash_Sorting_Robot
+# Recycle_Sorting_Robot
 
 ## Helpful Resources:
 
