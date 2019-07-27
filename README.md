@@ -20,6 +20,8 @@
 * [Bill_of_Materials.pdf](https://github.com/bandofpv/Trash_Sorting_Robot/blob/master/Documentation/Bill_of_Materials.pdf) - .pdf file including all my parts used in my project 
 * [Notebook.pdf](https://github.com/bandofpv/Trash_Sorting_Robot/blob/master/Documentation/Notebook.pdf) - .pdf file including my notebook that I used when building my robot
 
+### [Images](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/Images) - images of my project
+
 ### [RPI](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/RPI) - files used for Raspberry Pi to perform object detection:
 * [recycle_ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03](https://github.com/bandofpv/Trash_Sorting_Robot/tree/master/RPI/recycle_ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03) - .tflite and .txt files of the trained recycle model and lables to perform object detection
 * [recycle_detection.py](https://github.com/bandofpv/Trash_Sorting_Robot/blob/master/RPI/recycle_detection.py) - python code used to perform object detection and communicate with Arduino
