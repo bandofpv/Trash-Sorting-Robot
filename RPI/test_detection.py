@@ -1,4 +1,6 @@
 # This code will test your object detection model
+# NOTE: This code has very little comments because it was just to test if the detection model works.
+#       If you want more information on how it works, please check the recycle_detection.py file.
 
 # USAGE
 # python test_detection.py --model recycle_ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03/detect_edgetpu.tflite --labels recycle_ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03/labels.txt
@@ -70,13 +72,13 @@ while True:
 	results = model.DetectWithImage(frame, threshold=args["confidence"],
 		keep_aspect_ratio=True, relative_coord=False)
 	end = time.time()
-
+	
+	# draw alignment circles
 	cv2.circle(orig, (275, 445), 390, (0, 0, 255), 3, 8, 0)
 	cv2.circle(orig, (275, 445), 365, (0, 0, 255), 3, 8, 0)
 	cv2.circle(orig, (275, 445), 340, (0, 0, 255), 3, 8, 0)	
 	cv2.circle(orig, (275, 445), 315, (0, 0, 255), 3, 8, 0)
 	cv2.circle(orig, (275, 445), 290, (0, 0, 255), 3, 8, 0)
-	
 	cv2.circle(orig, (275, 0), 5, (0, 0, 255), 3, 8, 0)
 	
 	# loop over the results
@@ -94,7 +96,7 @@ while True:
 		midRadius = 375
 		largeRadius = 450
 		
-		if label != "cardboard!":
+		if True:
 			centerX = ((endX - startX) // 2) + startX
 			centerY = ((endY - startY) // 2) + startY
 
