@@ -37,4 +37,4 @@
 
 ## Tutorial:
 
-### WIP!!!
+[Hackser.io Tutorial](https://www.hackster.io/bandofpv/recycle-sorting-robot-with-google-coral-b52a92)
